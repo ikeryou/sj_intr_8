@@ -1,0 +1,43 @@
+@use '../global' as g;
+
+.l-xs {
+  @include g.pc {
+    display: none !important;
+  }
+}
+
+.l-lg {
+  @include g.sp {
+    display: none !important;
+  }
+}
+
+.l-mainCanvas {
+  @include g.pos(fixed);
+  pointer-events: none;
+}
+
+.l-w100 {
+  width: 100%;
+}
+
+.l-full {
+  @include g.full();
+}
+
+.-use-rollover .l-hover-simple {
+  transition: opacity 0.25s;
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+.l-btn {
+  @include g.pos(fixed);
+  @include g.size(100px, 50px);
+  @include g.center();
+  background-color: #000;
+  color: #FFF;
+  left: auto;
+  right: 0;
+}

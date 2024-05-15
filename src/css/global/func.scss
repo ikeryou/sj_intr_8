@@ -1,0 +1,11 @@
+
+@charset "UTF-8";
+@use 'sass:math';
+
+@function pc_vw($num, $base: 1400) {
+  @return (1vw * math.div($num, $base) * 100);
+}
+
+@function sp_vw($num, $base: 390) {
+  @return (1vw * math.div($num, $base) * 100);
+}

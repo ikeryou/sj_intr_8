@@ -1,0 +1,41 @@
+@use '../global' as g;
+
+.l-debug {
+  @include g.pos(fixed);
+  background-color: #000;
+  color: #FFF;
+  font-size: 10px;
+  z-index: 99999999;
+  // display: none;
+  padding: 20px;
+  pointer-events: none;
+}
+
+.l-guide {
+  @include g.pos(fixed);
+  width: 100%;
+  > img {
+    width: 100%;
+  }
+  @include g.sp {
+    top: -1020vh;
+  }
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 99999999;
+  // display: none;
+}
+
+.l-dummy {
+  @include g.pos();
+  width: 100%;
+  margin-top: g.pc_vw(100);
+  margin-bottom: g.sp_vw(100);
+  @include g.sp {
+    margin-top: g.sp_vw(170);
+    margin-bottom: g.sp_vw(150);
+  }
+  > img {
+    width: 100%;
+  }
+}

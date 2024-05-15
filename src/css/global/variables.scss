@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+@use 'sass:map';
+@use './breakpoint' as *;
+@use './mixin' as *;
+
+////////////////////////////
+// 変数
+////////////////////////////
+
+// sass variables
+$whiteGrid: 20px;
+
+// css variables
+:root,
+::backdrop {
+  --scrollbar: 8px;
+  --breakpoint: #{map.get($breakpoints, sp_pc)};
+  --100vw: calc(100vw - var(--scrollbar));
+  --1vw: calc((100vw - var(--scrollbar)) / 100);
+  --whiteGrid: 20px; // 白の固定グリッドのサイズ
+  // colors
+  --color-yellow: #ffdb00;
+  --color-brown: #c5b69c;
+  --color-darkbrown: #85755a;
+  --color-white: #fff;
+  --color-black: #303232;
+  --color-half-black: rgb(48 50 50 / 50%);
+  --color-thin-black: rgb(48 50 50 / 10%);
+  --color-transparent-white: rgb(255 255 255 / 15%);
+  --color-b1: #f2ece0;
+  --color-b2: #ede4d3;
+  --color-lightgrey: #f1f1ec;
+  --color-beige: #e2ca8b;
+
+  // font weight
+  --font-bold: bold;
+
+  @include pc {
+    --header-height: 130px;
+    --redGrid: (var(--100vw, 100vw) - #{$whiteGrid * 15}) / 14; // 赤の可変グリッドのサイズ
+    --mixGrid: #{$whiteGrid} + var(--redGrid); // 白 + 赤のグリッドのサイズ
+  }
+  @include sp {
+    --header-height: 100px;
+    --redGrid: (var(--100vw, 100vw) - #{$whiteGrid * 8}) / 7; // 赤の可変グリッドのサイズ
+    --mixGrid: #{$whiteGrid} + var(--redGrid); // 白 + 赤のグリッドのサイズ
+  }
+}

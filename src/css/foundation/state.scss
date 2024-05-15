@@ -1,0 +1,56 @@
+@charset "UTF-8";
+@use '../global' as g;
+////////////////////////
+//
+////////////////////////
+
+.s-none {
+  display: none !important;
+}
+
+.s-gpu {
+  will-change: transform;
+}
+
+.s-no-pointer {
+  pointer-events: none !important;
+}
+
+.s-hide {
+  opacity: 0.0001;
+  pointer-events: none !important;
+}
+
+.s-full {
+  width: 100%;
+  height: 100%;
+}
+
+.s-abl-full {
+  @include g.pos(absolute);
+  @include g.full();
+}
+
+.s-rel {
+  @include g.pos(relative);
+}
+
+.s-fit {
+  @include g.pos(absolute);
+  @include g.full();
+  object-fit: cover;
+}
+
+.s-fixed {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+}
+
+.s-hover {
+  body.-mouse & {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

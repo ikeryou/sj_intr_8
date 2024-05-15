@@ -1,0 +1,146 @@
+
+@charset "UTF-8";
+@use 'sass:math';
+
+@mixin pc(){
+  @media not all and (max-width: 900px) {
+		@content;
+  }
+}
+
+@mixin sp(){
+	@media all and ( max-width: 900px ) {
+		@content;
+	}
+}
+
+@mixin pc_max(){
+  @media not all and (max-width: 1400px) {
+		@content;
+  }
+}
+
+@mixin square_pc_max($size){
+  width: (1vw * math.div($size, 1400) * 100);
+  height: (1vw * math.div($size, 1400) * 100);
+  @media not all and (max-width: 1400px) {
+		width: $size * 1px;
+		height: $size * 1px;
+  }
+}
+
+@mixin size_pc_max($w, $h){
+  width: (1vw * math.div($w, 1400) * 100);
+  height: (1vw * math.div($h, 1400) * 100);
+  @media not all and (max-width: 1400px) {
+		width: $w * 1px;
+		height: $h * 1px;
+  }
+}
+
+@mixin fontsize_pc_max($size){
+  font-size: (1vw * math.div($size, 1440) * 100);
+  @media not all and (max-width: 1440px) {
+		font-size: $size * 1px;
+  }
+}
+
+@mixin maxSizeLg($w){
+  width: (1vw * math.div($w, 1440) * 100);
+  max-width: $w * 1px;
+}
+
+@mixin size($w, $h){
+  width: $w;
+  height: $h;
+}
+
+@mixin size_lg($w){
+  width: (1vw * math.div($w, 1400) * 100);
+}
+
+@mixin size_xs($w){
+  width: (1vw * math.div($w, 390) * 100);
+  height: (1vw * math.div($h, 390) * 100);
+}
+
+@mixin square($size){
+  width: $size;
+  height: $size;
+}
+
+@mixin center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin lsp($num){
+  letter-spacing: $num * 0.001 * 1em;
+}
+
+@mixin pos($p:relative, $top:0, $left:0){
+  position: $p;
+  top: $top;
+  left: $left;
+}
+
+@mixin pos_lg($p:relative, $top:0, $left:0){
+  position: $p;
+  top: (1vw * math.div($top, 1400) * 100);
+  left: (1vw * math.div($left, 1400) * 100);
+}
+
+@mixin full{
+  width: 100%;
+  height: 100%;
+}
+
+@mixin dot_line_x{
+  background-image : linear-gradient(to right, #364178 1px, transparent 1px);
+  background-size: 6px 1px;
+  background-repeat: repeat-x;
+  background-position: left bottom;
+}
+
+@mixin dot_line_y{
+  background-image : linear-gradient(to bottom, #30363a 1px, transparent 1px);
+  background-size: 1px 3px;
+  background-repeat: repeat-y;
+  background-position: left bottom;
+}
+
+@mixin flex_colum_center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin flex_row_center{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@mixin icon($img, $w, $h){
+  content: '';
+  background-image: $img;
+  width: $w;
+  height: $h;
+  background-size: $w $h;
+  display: block;
+}
+@mixin icon2($w, $h){
+  width: $w;
+  height: $h;
+  background-size: $w $h;
+}
+
+@mixin hover {
+  @media (hover: hover){
+    &:where(:any-link, :enabled, summary):hover {
+      @content;
+    }
+  }
+}

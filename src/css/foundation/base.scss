@@ -1,0 +1,38 @@
+@charset "UTF-8";
+@use '../global' as g;
+////////////////////////
+// base
+////////////////////////
+
+a {
+  color: inherit;
+}
+
+html, body {
+  background-color: #000;
+}
+
+body {
+}
+
+canvas {
+  user-select: none;
+}
+
+// ::selection {
+//   background-color: #000;
+//   color: #ddded8;
+// }
+
+button {
+  color: inherit;
+  .-use-rollover & {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+main {
+  width: 100%;
+}
