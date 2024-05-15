@@ -129,7 +129,7 @@ export class BgMain extends Canvas {
         this.renderSize.height = h
 
         this._blurCap.setSize(w * Conf.BLUR_SCALE, h * Conf.BLUR_SCALE)
-        this._dest.scale.set(w, h, 1)
+        this._dest.scale.set(w * Conf.BLUR_SCALE, h * Conf.BLUR_SCALE, 1)
 
         this._updatePersCamera(this._blurCamera, w * Conf.BLUR_SCALE, h * Conf.BLUR_SCALE)
         this._updatePersCamera(this.cameraPers, w, h)
