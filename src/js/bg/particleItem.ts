@@ -3,7 +3,6 @@ import { MyObject3D } from "../webgl/myObject3D"
 import { Util } from "../libs/util"
 import { Func } from "../core/func"
 import { Param } from "../core/param"
-import { Conf } from "../core/conf"
 
 
 export class ParticleItem extends MyObject3D {
@@ -86,8 +85,8 @@ export class ParticleItem extends MyObject3D {
     protected _update():void {
         super._update()
 
-        const sw = Func.sw() * Conf.BLUR_SCALE
-        const sh = Func.sh() * Conf.BLUR_SCALE
+        const sw = Func.sw()
+        const sh = Func.sh()
         const sp = 1
         const p = Param.instance.bg
 

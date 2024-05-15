@@ -1,6 +1,5 @@
 import GUI from 'lil-gui'
 import { Conf } from './conf'
-import { Util } from '../libs/util'
 
 export class Param {
   private static _instance: Param
@@ -8,12 +7,12 @@ export class Param {
   private _dat: any
 
   public bg = {
-    color:{value:Util.randomInt(0, 100), min:0, max:100, use:true},
+    color:{value:50, min:0, max:100, use:true},
     radius:{value:45, min:0, max:200, use:true},
     scale:{value:250, min:0, max:300, use:true},
     speed:{value:15, min:0, max:50, use:true},
     alpha:{value:100, min:0, max:100, use:true},
-    distortion:{value:70, min:-100, max:200, use:true},
+    distortion:{value:0, min:-100, max:200, use:true},
   }
 
   constructor() {
